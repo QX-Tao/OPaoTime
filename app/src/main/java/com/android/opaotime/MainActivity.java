@@ -17,11 +17,17 @@ public class MainActivity extends AppCompatActivity {
     public AudioManager am;
     //需要点击次数满足才会退出
     private int num = 100;
+    private DeviceManger deviceManger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        deviceManger = new DeviceManger(this);
+        deviceManger.enableDeviceManager();
+        Toast toast = Toast.makeText(this,null, Toast.LENGTH_LONG);
+        toast.setText("为了软件的正常运行，请先激活设备管理器。");
 
         //防止重新加载
         if (!this.isTaskRoot()) {
