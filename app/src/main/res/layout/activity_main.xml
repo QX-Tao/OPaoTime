@@ -8,9 +8,10 @@
     tools:context=".MainActivity">
     
     <TextView
+        android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="O泡时间到！"
+        android:text="@string/opao_time"
         />
 
 </LinearLayout>

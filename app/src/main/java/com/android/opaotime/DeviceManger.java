@@ -38,8 +38,12 @@ public class DeviceManger {
                     mContext.getString(R.string.dm_extra_add_explanation));
             mContext.startActivity(intent);
         } else {
-            Toast.makeText(mContext, "设备已经激活,请勿重复激活", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "设备已经激活！", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public boolean isEnableDeviceManager(){
+        return devicePolicyManager.isAdminActive(componentName);
     }
 
 }
